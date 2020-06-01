@@ -6,8 +6,10 @@ import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import useCachedResources from './hooks/useCachedResources';
 import BottomTabNavigator from './navigation/BottomTabNavigator';
 import LinkingConfiguration from './navigation/LinkingConfiguration';
+import PlanetDetail from './screens/PlanetDetailScreen';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator(
+);
 
 export default function App(props) {
   const isLoadingComplete = useCachedResources();
@@ -21,6 +23,7 @@ export default function App(props) {
         <NavigationContainer linking={LinkingConfiguration}>
           <Stack.Navigator>
             <Stack.Screen name="Root" component={BottomTabNavigator} />
+            <Stack.Screen name="PlanetDetail" component={PlanetDetail} />
           </Stack.Navigator>
         </NavigationContainer>
       </View>
